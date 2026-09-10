@@ -1,0 +1,54 @@
+---
+sidebar_position: 1
+---
+
+# ModelRoles
+
+## Was ist das?
+
+**ModelRoles** legt fest, welches **Modell** OMP für welche **Rolle** (Aufgabe) verwendet. So kannst du für schnelle Aufgaben ein kleines, schnelles Modell einsetzen und für schwierige Aufgaben ein gründlicheres.
+
+## Wofür dient es?
+
+Ein Coding-Agent hat viele verschiedene Aufgaben: kurze Zusammenfassungen, große Refactorings, Planungen oder das Erzeugen von Sitzungstiteln. Nicht jede Aufgabe braucht das leistungsfähigste Modell. ModelRoles ordnet den Rollen passende Modelle zu.
+
+## Welche Rollen gibt es?
+
+Grundlegende Rollen (Auswahl):
+
+| Rolle | Bedeutung |
+| --- | --- |
+| `default` | Standardmodell für die normale Arbeit. |
+| `smol` | Schnelles, kleines Modell für leichte Aufgaben. |
+| `slow` | Gründliches Modell für anspruchsvolle Aufgaben. |
+| `vision` | Modell für die Verarbeitung von Bildern. |
+| `plan` | Modell für Planung und Architektur. |
+| `advisor` | Zweites Modell, das deine Arbeit beobachtet. |
+
+Weitere Rollen wie `tiny` oder `task` existieren ebenfalls.
+
+## Grundlegende Konfiguration
+
+ModelRoles wird in der Konfigurationsdatei gesetzt:
+
+```yaml
+modelRoles:
+  default: anthropic/claude-sonnet-4-5
+  smol: openai/gpt-4.1-mini
+  slow: anthropic/claude-opus-4-5:high
+```
+
+:::note
+Die hier gezeigten Modellnamen sind Beispiele aus der offiziellen Dokumentation. Welche Modelle verfügbar sind, hängt von deinen Konten und der aktuellen Modellliste ab.
+:::
+
+## Modelle über Befehlsoptionen auswählen
+
+Für die wichtigsten Rollen gibt es direkte Optionen:
+
+- `--model` – Modell bzw. Rolle für die Sitzung.
+- `--smol` – schnelles Modell.
+- `--slow` – gründliches Modell.
+- `--plan` – Planungsmodell.
+
+Das genügt für den Einstieg. Der Advisor lässt sich zusätzlich über `modelRoles.advisor` konfigurieren.

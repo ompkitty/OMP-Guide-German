@@ -1,0 +1,29 @@
+---
+sidebar_position: 3
+---
+
+# Windows / PowerShell
+
+Für Windows bietet OMP einen eigenen Installationsbefehl für PowerShell:
+
+```powershell
+irm https://omp.sh/install.ps1 | iex
+```
+
+## PowerShell 7 empfohlen
+
+:::note[Praktische Erfahrung]
+Bei der Installation von OMP unter Windows trat mit Windows PowerShell 5.1 ein Fehler bei der Ermittlung der Windows-Architektur (`OSArchitecture`) auf. Mit PowerShell 7 funktionierte die Installation anschließend problemlos.
+:::
+
+Dieser Hinweis ist eine **bekannte praktische Erfahrung** und kein allgemeingültiger Fehler für alle Windows-Systeme. Sollte die Installation unter PowerShell 5.1 Probleme bereiten, ist der Wechsel auf PowerShell 7 in der Regel die unkomplizierteste Lösung.
+
+## Kurz: PowerShell 7 nutzen
+
+1. Lade PowerShell 7 herunter – zum Beispiel über die offizielle [PowerShell-Dokumentation](https://learn.microsoft.com/powershell/).
+2. Starte PowerShell 7.
+3. Führe den Installationsbefehl erneut aus:
+
+```powershell
+irm https://omp.sh/install.ps1 | iex
+```

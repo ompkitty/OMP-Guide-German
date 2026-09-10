@@ -1,0 +1,73 @@
+---
+sidebar_position: 1
+---
+
+# Kostenlose Nutzung
+
+Oh My Pi selbst ist Open Source und kostenlos nutzbar. Kosten entstehen erst, wenn ein KI-Modell über einen Anbieter aufgerufen wird. Viele Anbieter stellen dafür aber kostenlose Einstiegsmöglichkeiten bereit. Die beiden gängigsten Varianten werden hier erklärt.
+
+## Empfohlener Ablauf
+
+Für den Einstieg ist dieser Weg sinnvoll:
+
+1. **OpenRouter** ausprobieren – kostenlose Modelle direkt nutzen.
+2. Wenn die Limits erreicht sind, auf das **NVIDIA Developer Program** wechseln.
+3. **NVIDIA-Account** erstellen und einen **API-Key bei NVIDIA Build** anlegen.
+4. Den API-Key in **Oh My Pi** hinterlegen.
+5. Zugriff auf **über 20 moderne KI-Modelle**.
+
+## OpenRouter – kostenlos loslegen
+
+**OpenRouter** ist ein Dienst, der eine einheitliche API für den Zugriff auf zahlreiche KI-Modelle unterschiedlicher Anbieter bereitstellt. Statt für jeden Anbieter einen eigenen Zugang einzurichten, erreichst du über OpenRouter viele Modelle über einen einzigen Weg.
+
+OpenRouter bietet auch kostenlose Modelle bzw. eine kostenlose Nutzung an – ideal, um Oh My Pi ohne laufende Kosten auszuprobieren.
+
+:::caution
+Die kostenlosen Kontingente und Limits können relativ schnell ausgeschöpft sein. OpenRouter ist daher vor allem zum Ausprobieren geeignet; für eine intensive oder dauerhafte Nutzung eignet sich eine andere Lösung besser.
+:::
+
+<a className="button button--secondary" href="https://openrouter.ai/openrouter/free" target="_blank" rel="noopener noreferrer">
+  OpenRouter – kostenlose Modelle
+</a>
+
+## NVIDIA Developer Program – solide Alternative
+
+Als Alternative für eine regelmäßigere Nutzung bietet sich das kostenlose **NVIDIA Developer Program** an. NVIDIA stellt über seine Developer-Plattform Zugriff auf moderne KI-Modelle über eine API bereit. Ein Account lässt sich kostenlos erstellen.
+
+### Schritt 1: NVIDIA-Account erstellen
+
+Der Account wird über das NVIDIA Organisationsportal eingerichtet:
+
+<a className="button button--secondary" href="https://org.ngc.nvidia.com/setup/personal-keys" target="_blank" rel="noopener noreferrer">
+  NVIDIA Organisationsportal – Account erstellen
+</a>
+
+### Schritt 2: API-Key bei NVIDIA Build erstellen
+
+Nach der Anmeldung erstellst du über **NVIDIA Build** einen API-Key, über den du auf die Modelle zugreifen kannst:
+
+<a className="button button--secondary" href="https://build.nvidia.com/settings/api-keys" target="_blank" rel="noopener noreferrer">
+  NVIDIA Build – API-Key erstellen
+</a>
+
+Der folgende Screenshot zeigt, wo der API-Key bei NVIDIA Build verwaltet bzw. erstellt wird:
+
+![Screenshot: Erstellung des API-Keys bei NVIDIA Build](/img/build_api_nvidia.png)
+
+### Schritt 3: API-Key in Oh My Pi hinterlegen
+
+Starte Oh My Pi und gib innerhalb der Sitzung Folgendes ein:
+
+```text
+/login
+```
+
+Wähle anschließend **NVIDIA** als Anbieter aus. Oh My Pi fragt dich dann direkt nach dem API-Key; den trägst du einfach ein. Ein eigener Befehl ist dafür nicht nötig.
+
+### Schritt 4: Modelle nutzen
+
+Sobald der Key hinterlegt ist, stehen dir über die NVIDIA-API **mehr als 20 moderne KI-Modelle** zur Verfügung – ohne dass du dafür zunächst ein kostenpflichtiges Abonnement abschließen musst.
+
+:::info
+Eine Übersicht über die grundlegende Konfiguration von Oh My Pi findest du unter [Konfiguration](../konfiguration/grundlagen).
+:::

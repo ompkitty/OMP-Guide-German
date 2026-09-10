@@ -1,0 +1,55 @@
+---
+sidebar_position: 1
+---
+
+# Konfiguration – Grundlagen
+
+OMP lässt sich über Konfigurationsdateien und Befehle an deine Bedürfnisse anpassen. Für den Einstieg genügt ein grober Überblick.
+
+## Wo wird OMP konfiguriert?
+
+OMP verwendet einfache Konfigurationsdateien im YAML-Format:
+
+- **Global (Benutzer):** `~/.omp/agent/config.yml` – gilt für alle Projekte.
+- **Pro Projekt:** `<Projektordner>/.omp/config.yml` – gilt nur für dieses Projekt und ergänzt bzw. überschreibt die globalen Einstellungen.
+- **Temporär:** Mit `omp --config <datei>` kannst du für einen einzelnen Start weitere Einstellungen laden.
+
+:::note
+Der Pfad `~/.omp/agent/config.yml` ist die Standardablagestelle. Je nach Betriebssystem und Profil kann der tatsächliche Ort abweichen.
+:::
+
+## Wie lässt sich die Konfiguration bearbeiten?
+
+Du hast mehrere Möglichkeiten:
+
+- **Einstellungen-UI:** Innerhalb einer laufenden OMP-Sitzung über `/settings`.
+- **Befehle:** Zum Beispiel `omp config list` (ansehen), `omp config get <schlüssel>` und `omp config set <schlüssel> <wert>`.
+- **Direkt in der Datei:** Die YAML-Datei mit einem Editor öffnen und die gewünschten Werte setzen.
+
+## Welche Bereiche lassen sich konfigurieren?
+
+Die wichtigsten Bereiche für den Einstieg:
+
+| Bereich | Was du damit einstellst |
+| --- | --- |
+| **Modelle & Rollen** | Welches Modell OMP für welche Aufgabe verwendet (`modelRoles`). |
+| **Darstellung** | Helles/dunkles Design und den Symbol-Stil der Oberfläche (`theme`, `symbolPreset`). |
+| **Werkzeuge & Freigaben** | Welche Aktionen OMP ohne Rückfrage ausführen darf (`tools.approvalMode`). |
+| **Kompaktierung** | Wie OMP lange Sitzungen zusammenfasst (`compaction`). |
+
+## Ein einfaches Beispiel
+
+Eine minimale Konfigurationsdatei könnte so aussehen:
+
+```yaml
+theme:
+  dark: titanium
+  light: light
+
+tools:
+  approvalMode: write
+```
+
+:::tip
+Für Einsteiger sind vor allem zwei Themen interessant: die Wahl des Modells über **ModelRoles** und die optische Anpassung über **Designs**. Beides wird im Abschnitt [Settings](../settings/modelroles) genauer erklärt.
+:::
